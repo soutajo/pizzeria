@@ -3,11 +3,12 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
+require 'sinatra/activerecord/rake'
 
-set :database, "sqlite3:pizzeria.db"
+set :database, {adapter: "sqlite3", database: "pizzeria.db"}
 
 class Product < ActiveRecord::Base
-	
+
 end
 
 get '/' do
